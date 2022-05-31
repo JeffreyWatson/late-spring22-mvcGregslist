@@ -1,21 +1,46 @@
 import { ProxyState } from "../AppState.js";
+import { getHouseForm } from "../Components/HouseForm.js";
+import { housesService } from "../Services/HousesService.js"
 
 
-function _drawHouses(){
-  // get all the houses and build a template
-  
 
-  document.getElementById('listings').innerHTML = ' The Houses go here'
+function _drawHouses() {
+  let house = ProxyState.houses
+  let template = ''
+  house.forEach(h => {
+    template += h.Template
+  })
+  document.getElementById('listings').innerHTML = template
 }
 
 
-export class HousesController{
- constructor(){
-   console.log('Houses controller loaded', ProxyState.houses);
- }
+export class HousesController {
+  constructor() {
+    // console.log('Houses controller loaded', ProxyState.houses);
+    ProxyState.on('houses', _drawHouses)
+  }
 
- viewHouses(){
   //  Get Car Form and inject into modal body
-  _drawHouses()
- }
+  viewHouses() {
+    let form = getHouseForm()
+    document.getElementById('form-body').innerHTML = form
+    _drawHouses()
+  }
+
+  createHouse() {
+    window.event.preventDefault()
+    let form = window.event.target
+    console.log('submitted form', form);
+    let housesData = {
+      bedrooms: form.bedrooms.value,
+      bathrooms: form.bathrooms.value,
+      sqFootage: form.sqFootage.value,
+      price: form.price.value,
+      description: form.description.value,
+      imgUrl: form.imgUrl.value
+    }
+    housesService.createHouse(housesData)
+    form.reset()
+    bootstrap.Modal.getOrCreateInstance(document.getElementById('form-modal')).hide()
+  }
 }
