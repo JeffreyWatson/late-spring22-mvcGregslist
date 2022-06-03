@@ -1,6 +1,5 @@
-export function getCarForm(){
-  return `
-  
+export function getCarForm(car = {}) {
+  return /*html*/`
   <form class="mb-3 col-12 bg-white p-3 mt-4" onsubmit="app.carsController.createCar()">
               <h3> List a Car </h3>
                 <div class="row">

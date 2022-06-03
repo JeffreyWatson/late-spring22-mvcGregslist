@@ -4,9 +4,12 @@ import { House } from "../Models/House.js";
 
 class HousesService {
   createHouse(housesData) {
-    // console.log(housesData);
     ProxyState.houses = [...ProxyState.houses, new House(housesData)]
     console.log(ProxyState.houses);
+  }
+
+  deleteHouse(id) {
+    ProxyState.houses = ProxyState.houses.filter(h => h.id != id)
   }
 }
 

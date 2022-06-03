@@ -1,13 +1,12 @@
 export function getHouseForm() {
-  return `
-  
+  return /*html*/`
   <form class="mb-3 col-12 bg-white p-3 mt-4" onsubmit="app.housesController.createHouse()">
               <h3> List a House </h3>
                 <div class="row">
                   <div class="col-3 mb-2">
                     <label for="" class="form-label">Bedrooms</label>
                     <input required type="number" name="bedrooms" id="bedrooms" placeholder="Enter number of bedrooms..." maxlength="15"
-                      minlength="3" class="form-control" placeholder="" aria-describedby="helpId"
+                      minlength="1" class="form-control" placeholder="" aria-describedby="helpId"
                       title="please enter number of bathrooms">
                   </div>
                   <div class="col-3 mb-2">
@@ -17,7 +16,7 @@ export function getHouseForm() {
                   </div>
                   <div class="col-3 mb-2">
                     <label for="" class="form-label">Square Footage</label>
-                    <input required type="number" name="Square Footage" id="Square Footage" value="200" min="0" max="100000"
+                    <input required type="number" name="sqFootage" id="sqFootage" value="200" min="0" max="30000"
                       class="form-control" placeholder="" aria-describedby="helpId">
                   </div>
                   <div class="col-3 mb-2">

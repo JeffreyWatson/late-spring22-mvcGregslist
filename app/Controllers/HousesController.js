@@ -1,6 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import { getHouseForm } from "../Components/HouseForm.js";
-import { housesService } from "../Services/HousesService.js"
+import { housesService } from "../Services/HousesService.js";
 
 
 
@@ -16,7 +16,6 @@ function _drawHouses() {
 
 export class HousesController {
   constructor() {
-    // console.log('Houses controller loaded', ProxyState.houses);
     ProxyState.on('houses', _drawHouses)
   }
 
@@ -42,5 +41,10 @@ export class HousesController {
     housesService.createHouse(housesData)
     form.reset()
     bootstrap.Modal.getOrCreateInstance(document.getElementById('form-modal')).hide()
+  }
+
+  deleteHouse(id) {
+    housesService.deleteHouse(id)
+    console.log(id);
   }
 }
