@@ -10,19 +10,18 @@
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
-  <title>gregslist</title>
+  <title>Gregslist</title>
 </head>
 
 <body>
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select d-flex justify-content-between px-5">
       <a class="navbar-brand ms-3" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt="" loading="lazy">
-        <span class="ms-2">gregslist</span>
+        <span class="ms-2">Gregslist</span>
       </a>
       <b onclick="app.carsController.viewCars()">Cars</b>
       <b onclick="app.housesController.viewHouses()">Houses</b>
-      <b>Jobs</b>
+      <b onclick="">Jobs</b>
     </nav>
   </header>
   <main>
@@ -41,8 +40,8 @@
         <!-- Car end -->
       </div>
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#form-modal">
-        Create
+      <button type="button" class="btn btn-dark btn-lg create-button elevation-5" data-bs-toggle="modal" data-bs-target="#form-modal">
+        <i class="mdi mdi-plus-outline"></i>
       </button>
 
       <!-- Modal -->
