@@ -6,7 +6,8 @@ export class House {
     this.id = housesData.id || generateId()
     this.bedrooms = housesData.bedrooms
     this.bathrooms = housesData.bathrooms
-    this.sqFootage = housesData.sqFootage
+    this.year = housesData.year
+    this.levels = housesData.levels
     this.price = housesData.price
     this.description = housesData.description
     this.imgUrl = housesData.imgUrl
@@ -19,11 +20,13 @@ export class House {
     <div class="rounded shadow p-2">
       <img class="img-fluid" src="${this.imgUrl}" alt="">
       <h5 class="text-center">${this.bedrooms} | ${this.bathrooms}</h5>
-      <h4 class="text-center">${this.sqFootage}</h4>
       <h4 class="text-center">$${this.price}</h4>
+      <div class="d-flex justify-content-between">Year: ${this.year} <span>Levels:${this.levels}</span></div>
       <p>${this.description}</p>
-      <input class="w-100" type="color" value="${this.color}">
+      <div class="d-flex justify-content-between">
       <button class="btn btn-danger" onclick="app.housesController.deleteHouse('${this.id}')"><i class="mdi mdi-delete"></i></button>
+      <button class="btn btn-warning" onclick="app.housesController.openEditForm('${this.id}')"><i class="mdi mdi-pencil"></i></button>
+      </div>
     </div>
   </div>
       `

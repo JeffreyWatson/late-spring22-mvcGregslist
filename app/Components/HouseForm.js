@@ -1,4 +1,4 @@
-export function getHouseForm() {
+export function getHouseForm(house = {}) {
   return /*html*/`
   <form class="mb-3 col-12 bg-white p-3 mt-4" onsubmit="app.housesController.createHouse()">
               <h3> List a House </h3>
@@ -15,8 +15,13 @@ export function getHouseForm() {
                       class="form-control" placeholder="" aria-describedby="helpId">
                   </div>
                   <div class="col-3 mb-2">
-                    <label for="" class="form-label">Square Footage</label>
-                    <input required type="number" name="sqFootage" id="sqFootage" value="200" min="0" max="30000"
+                    <label for="" class="form-label">Year</label>
+                    <input required type="number" name="year" id="year" value="2000" min="1900" max="3000"
+                      class="form-control" placeholder="" aria-describedby="helpId">
+                  </div>
+                  <div class="col-3 mb-2">
+                    <label for="" class="form-label">Levels</label>
+                    <input required type="number" name="levels" id="levels" value="1" min="1" max="100"
                       class="form-control" placeholder="" aria-describedby="helpId">
                   </div>
                   <div class="col-3 mb-2">

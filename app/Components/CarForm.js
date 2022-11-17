@@ -42,8 +42,7 @@ export function getCarForm(car = {}) {
                   </div>
                 </div>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary px-3 py-2" title="create a car"><i
-                    class="mdi mdi-plus"></i>
+                <button type="submit" class="btn btn-primary px-3 py-2" title="create a car">
                   Create</button>
               </form>`
 }
