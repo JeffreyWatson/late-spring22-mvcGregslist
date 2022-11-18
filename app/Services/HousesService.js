@@ -1,16 +1,16 @@
 import { ProxyState } from "../AppState.js";
 import { House } from "../Models/House.js";
-import { apiHouse } from "./AxiosService.js";
+import { apiHouse } from "./AxiosService";
 
 
 class HousesService {
-  async getHouses() {
-    const res = await apiHouse.get('houses')
+  getHouses() {
+    const res = apiHouse.get('houses')
     ProxyState.houses = res.data.map(h => new House(h))
   }
 
-  async createHouse(housesData) {
-    const res = await apiHouse.post('houses', housesData)
+  async createHouse() {
+    const res = await apiHouse.post('houses')
     ProxyState.houses = [...ProxyState.houses, new House(res.data)]
   }
 

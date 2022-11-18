@@ -1,4 +1,4 @@
-export function getCarForm(car = {}) {
+function getCarForm(car = {}) {
   return /*html*/`
   <form class="mb-3 col-12 bg-white p-3 mt-4" onsubmit="app.carsController.createCar()">
               <h3> List a Car </h3>
@@ -44,5 +44,5 @@ export function getCarForm(car = {}) {
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary px-3 py-2" title="create a car">
                   Create</button>
-              </form>`
+                </form>`
 }

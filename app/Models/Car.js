@@ -2,22 +2,20 @@ import { generateId } from "../Utils/generateId.js"
 
 
 export class Car {
-  constructor(carData) {
     // NOTE need id to have something unique on each car
     // NOTE added carData.id to this.id
-    this.id = carData.id || generateId()
-    this.make = carData.make
-    this.model = carData.model
-    this.description = carData.description
-    this.price = carData.price
-    this.year = carData.year
-    this.color = carData.color
-    this.imgUrl = carData.imgUrl
-  }
+this.id = carData.id || generateId()
+this.make = carData.make
+this.model = carData.model
+this.description = carData.description
+this.price = carData.price
+this.year = carData.year
+this.color = carData.color
+this.imgUrl = carData.imgUrl
 
   // NOTE add an extra button for editing vehicles
   get Template() {
-    return /*html*/`
+  return /*html*/`
   <div class=" col-6 col-md-3 mt-3 height">
     <div class="rounded shadow p-2">
       <img class="img-fluid" src="${this.imgUrl}" alt="">
@@ -32,5 +30,5 @@ export class Car {
     </div>
   </div>
     `
-  }
+}
 }

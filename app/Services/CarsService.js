@@ -1,12 +1,10 @@
 import { ProxyState } from "../AppState.js";
 import { Car } from "../Models/Car.js";
-import { apiCar } from "./AxiosService.js";
-
 
 class CarsService {
-  async getCars() {
+  getCars() {
     // @ts-ignore
-    const response = await apiCar.get('cars')
+    const response = apiCar.get('cars')
     ProxyState.cars = response.data.map(c => new Car(c))
   }
 
@@ -18,7 +16,7 @@ class CarsService {
 
 
   async updateCar(carData, id) {
-    const response = await apiCar.put('cars/' + id, carData)
+    const response = await apiCar.put('cars' + id, carData)
     console.log('update car', response.data);
     let carIndex = ProxyState.cars.findIndex(c => c.id == id)
     ProxyState.cars.splice(carIndex, 1, new Car(response.data))
@@ -33,4 +31,3 @@ class CarsService {
 }
 
 
-export const carsService = new CarsService()

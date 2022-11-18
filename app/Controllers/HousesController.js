@@ -1,6 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import { getHouseForm } from "../Components/HouseForm.js";
-import { housesService } from "../Services/HousesService.js";
+import { housesService } from "../Services/HousesService";
 
 
 
@@ -17,7 +17,6 @@ function _drawHouses() {
 
 export class HousesController {
   constructor() {
-    ProxyState.on('houses', _drawHouses)
     this.getHouses()
     this.viewHouses()
   }
@@ -52,6 +51,8 @@ export class HousesController {
       // @ts-ignore
       imgUrl: form.imgUrl.value
     }
+
+    // @ts-ignore
     await housesService.createHouse(housesData)
     // @ts-ignore
     form.reset()
